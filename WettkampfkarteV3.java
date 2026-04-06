@@ -1,0 +1,86 @@
+public class Wettkampfkarte
+{
+    public static final int GESAMT = 0;
+    public static final int LAUF = 1;
+    public static final int SPRUNG = 2;
+    public static final int WURF = 3;
+
+    private String zName;
+    private String zVorname;
+    private String zKlasse;
+    private int zJahrgang;
+    private int zLauf;
+    private int zSprung;
+    private int zWurf;
+
+    // Konstruktor
+    public Wettkampfkarte(String pName, String pVorname, String pKlasse, int pJahrgang)
+    {
+        zName = pName;
+        zVorname = pVorname;
+        zKlasse = pKlasse;
+        zJahrgang = pJahrgang;
+    }
+
+    public void setzePunkte(int pDisziplin, int pPunkte)
+    {
+        switch(pDisziplin)
+        {
+            case LAUF:
+                zLauf = pPunkte;
+                break;
+            case SPRUNG:
+                zSprung = pPunkte;
+                break;
+            case WURF:
+                zWurf = pPunkte;
+                break;
+        }
+    }
+
+    public String name()
+    {
+        return zName;
+    }
+
+    public String vorname()
+    {
+        return zVorname;
+    }
+
+    public String klasse()
+    {
+        return zKlasse;
+    }
+
+    public int jahrgang()
+    {
+        return zJahrgang;
+    }
+    
+    public int punkte(int pDisziplin)
+    {
+        int lErgebnis = 0;
+        switch(pDisziplin)
+        {
+            case GESAMT:
+                lErgebnis = zLauf + zSprung + zWurf;
+                break;
+            case LAUF:
+                lErgebnis = zLauf;
+                break;
+            case SPRUNG:
+                lErgebnis = zSprung;
+                break;
+            case WURF:
+                lErgebnis = zWurf;
+                break;
+        }
+        return lErgebnis;
+    }
+    
+    public void gibFrei()
+    {
+        gibFrei();
+    }
+}
